@@ -6,8 +6,13 @@ require('dotenv').config()
 
 
 //fors cors
-app.use(cors());
-//for getting object in JSON format
+const corsOptions = {
+    origin: 'https://medicare-frontend-eight.vercel.app',  // Replace with your frontend URL
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+  };
+  app.use(cors(corsOptions));
+  
 app.use(express.json())
 
 
